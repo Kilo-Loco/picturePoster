@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Picture_Poster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,75 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ev-g1-kPt">
+                                <rect key="frame" x="256" y="233" width="89" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="EK3-wz-gNR"/>
+                                    <constraint firstAttribute="height" constant="30" id="RCm-LH-VNv"/>
+                                    <constraint firstAttribute="width" constant="89" id="UeF-Xd-iVZ"/>
+                                </constraints>
+                                <state key="normal" title="Select Image"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EK3-wz-gNR"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MIg-Zt-VgB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tns-rs-u83">
+                                <rect key="frame" x="253" y="308" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="5rf-NG-LX2"/>
+                                    <constraint firstAttribute="height" constant="30" id="sIR-Ur-cPh"/>
+                                </constraints>
+                                <state key="normal" title="Upload Image"/>
+                                <connections>
+                                    <action selector="uploadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1QT-bb-9B8"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XO2-IC-q9t">
+                                <rect key="frame" x="180" y="28" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="hHT-49-8QC"/>
+                                    <constraint firstAttribute="height" constant="128" id="rdS-ko-LkK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBl-id-dCc">
+                                <rect key="frame" x="196" y="177" width="209" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="WFs-FY-HBN"/>
+                                    <constraint firstAttribute="height" constant="21" id="zI8-2a-TeN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XO2-IC-q9t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ba-Ca-8U1"/>
+                            <constraint firstItem="2Ev-g1-kPt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A8t-jv-QEi"/>
+                            <constraint firstItem="2Ev-g1-kPt" firstAttribute="top" secondItem="PBl-id-dCc" secondAttribute="bottom" constant="35" id="Ai7-kJ-6Hb"/>
+                            <constraint firstItem="Tns-rs-u83" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VeJ-g9-ePu"/>
+                            <constraint firstItem="XO2-IC-q9t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ekz-8C-RN5"/>
+                            <constraint firstItem="Tns-rs-u83" firstAttribute="top" secondItem="2Ev-g1-kPt" secondAttribute="bottom" constant="45" id="lrc-w3-LgE"/>
+                            <constraint firstItem="PBl-id-dCc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="157" id="oUM-m9-r9c"/>
+                            <constraint firstItem="PBl-id-dCc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pGa-oy-W16"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="XO2-IC-q9t" id="ZLQ-kh-aLy"/>
+                        <outlet property="label" destination="PBl-id-dCc" id="hQ7-mn-pc5"/>
+                        <outlet property="selectedImageBtn" destination="2Ev-g1-kPt" id="F18-bD-aYK"/>
+                        <outlet property="uploadImageBtn" destination="Tns-rs-u83" id="4Ks-H7-UH8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="243" y="182"/>
         </scene>
     </scenes>
 </document>
